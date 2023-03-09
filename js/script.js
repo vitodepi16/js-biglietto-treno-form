@@ -13,9 +13,11 @@ Il programma dovrà chiedere all'utente il numero di chilometri che vuole percor
 const priceticket = document.getElementById('priceticket');
 const ageBox = priceticket.querySelector('input[name="age"]');
 const kmBox = priceticket.querySelector('input[name="km"]');
+const price = document.getElementById('price'); 
 
 const btncalc = document.querySelector('#btncalc');
-
+const btncanc = document.getElementById('btncanc');
+console.log(btncanc);
 
 
 btncalc.addEventListener('click', function () {
@@ -28,6 +30,7 @@ btncalc.addEventListener('click', function () {
     const discountOld =  ((totalPrice) * 0.40).toFixed(2);
     let priceDiscountYoung = (totalPrice - discountYoung ).toFixed(2);
     let priceDiscountold = (totalPrice - discountOld).toFixed(2);
+    
 
 
 
@@ -39,7 +42,7 @@ btncalc.addEventListener('click', function () {
     else  if (ageUser < 18){
     totalPrice = discountYoung, 
     document.getElementById('finalpriceTitol').innerHTML = `
-    <h2>Lo sconto del biglietto é: ${totalPrice}&euro; </h2>
+    <p>Lo sconto del biglietto é: ${totalPrice}&euro; </p>
     `;
     document.getElementById('finalprice').innerHTML = ` 
     <h1>Totale da pagare:${priceDiscountYoung}&euro;</h1>
@@ -47,7 +50,7 @@ btncalc.addEventListener('click', function () {
 }
     else if(ageUser > 64){
         totalPrice = discountOld,
-        document.getElementById('discountTicket').innerHTML = `
+        document.getElementById('finalpriceTitol').innerHTML = `
         <p>Lo sconto del biglietto é di: ${totalPrice}&euro; </p>
         `;
         document.getElementById('finalprice').innerHTML = ` 
@@ -55,24 +58,24 @@ btncalc.addEventListener('click', function () {
         `;
     } 
     else {
-        document.getElementById('priceticket').innerHTML = `
+        document.getElementById('finalprice').innerHTML = `
 <h1>Il Prezzo del tuo biglietto:   ${totalPrice}&euro; </h1>
 `;
     }
-    
-
-
-
-
-    console.log(ageUser);
-    console.log(travelKm);
 })
 
 document.getElementById('priceticket').innerHTML=`
 <h1>Il Prezzo del tuo biglietto é:  ${totalPrice}&euro; </h1>
 `;
 
-const btncanc = document.querySelector('btncanc');
+
+btncanc.addEventListener('click', function() {
+    ageBox.value = "";
+    kmBox.value = "";
+    document.getElementById('price').value = '';
+    // price.classList.add('d-none');
+
+})
 
 
 
