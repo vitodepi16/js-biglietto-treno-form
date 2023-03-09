@@ -10,23 +10,15 @@ Il programma dovrà chiedere all'utente il numero di chilometri che vuole percor
 */
 
 
-// const ageUser = prompt('Inserisci la tua Età');
-// const travelKm = ('Per quanti km intendi viaggiare?');
-// const priceKm = 0.21;
-// let totalPrice = (travelKm * priceKm).toFixed(2);
-// const discountYoung = ((totalPrice) * 0.20).toFixed(2);
-// const discountOld =  ((totalPrice) * 0.40).toFixed(2);
-// let priceDiscountYoung = (totalPrice - discountYoung ).toFixed(2);
-// let priceDiscountold = (totalPrice - discountOld).toFixed(2);
 const priceticket = document.getElementById('priceticket');
 const ageBox = priceticket.querySelector('input[name="age"]');
 const kmBox = priceticket.querySelector('input[name="km"]');
 
-const button = document.querySelector('button');
-console.log(button);
+const btncalc = document.querySelector('#btncalc');
 
 
-button.addEventListener('click', function () {
+
+btncalc.addEventListener('click', function () {
     let ageUser = ageBox.value;
     let travelKm = kmBox.value;
     const priceKm = 0.21;
@@ -36,6 +28,7 @@ button.addEventListener('click', function () {
     const discountOld =  ((totalPrice) * 0.40).toFixed(2);
     let priceDiscountYoung = (totalPrice - discountYoung ).toFixed(2);
     let priceDiscountold = (totalPrice - discountOld).toFixed(2);
+
 
 
     if(isNaN(ageUser), isNaN(travelKm)){
@@ -79,6 +72,7 @@ document.getElementById('priceticket').innerHTML=`
 <h1>Il Prezzo del tuo biglietto é:  ${totalPrice}&euro; </h1>
 `;
 
+const btncanc = document.querySelector('btncanc');
 
 
 
