@@ -19,7 +19,6 @@ const btncalc = document.querySelector('#btncalc');
 const btncanc = document.getElementById('btncanc');
 console.log(btncanc);
 
-
 btncalc.addEventListener('click', function () {
     let ageUser = ageBox.value;
     let travelKm = kmBox.value;
@@ -64,17 +63,12 @@ btncalc.addEventListener('click', function () {
     }
 })
 
-document.getElementById('priceticket').innerHTML=`
-<h1>Il Prezzo del tuo biglietto é:  ${totalPrice}&euro; </h1>
-`;
-
 
 btncanc.addEventListener('click', function() {
     ageBox.value = "";
     kmBox.value = "";
-    document.getElementById('price').value = '';
-    // price.classList.add('d-none');
-
+    document.getElementById('finalprice').innerHTML = '';
+    document.getElementById('finalpriceTitol').innerHTML = '';
 })
 
 
